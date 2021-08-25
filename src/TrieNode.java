@@ -13,9 +13,6 @@ import java.util.Optional;
  */
 public class TrieNode<T> {
 
-    /** The key associated with this node (relative to its parent).*/
-    private final char key;
-
     /** The data eventually associated with this node. */
     @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
     private Optional<T> data;
@@ -24,15 +21,14 @@ public class TrieNode<T> {
     private final Hashtable<Character, TrieNode<T>> children;
 
     /** Constructor.*/
-    public TrieNode(char key, final T data) {
-        this.key = key;
+    public TrieNode(final T data) {
         this.data = Optional.ofNullable(data);
         this.children = new Hashtable<>();
     }
 
     /** Constructor. Creates a new node with an empty key ('') and without data. */
     public TrieNode() {
-        this('\0',null);
+        this(null);
     }
 
     /** @return the data associated with this node if it is present, null otherwise. */
@@ -87,10 +83,10 @@ public class TrieNode<T> {
             return oldData;
         } else {
             for(; i<word.length-1; i++ ) {
-                parent.children.put(word[i], new TrieNode<>(word[i], null) );
+                parent.children.put(word[i], new TrieNode<>(null) );
                 parent = parent.children.get(word[i]);
             }
-            parent.children.put(word[i], new TrieNode<>(word[i], data));
+            parent.children.put(word[i], new TrieNode<>(data));
             return null;
         }
     }
