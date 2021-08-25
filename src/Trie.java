@@ -7,9 +7,24 @@ public class Trie<T> {
     /** The root node. */
     private final TrieNode<T> rootNode;
 
-    /** Constructor. */
+    /** Constructor. Creates an empty Trie.*/
     public Trie() {
-        this.rootNode = new TrieNode<>();
+        this(null);
+    }
+
+    /** Constructor. Creates a Trie having as root the given node.
+     * @param root The {@link TrieNode} to use as root for the instance to create.
+     *             If the given node is null, a new empty node will be used as root.*/
+    public Trie(TrieNode<T> root) {
+        this.rootNode = root==null ? new TrieNode<>() : root;
+    }
+
+    /**
+     * @return the subtree having the desired prefix as root node. It might be empty
+     *          if no results are available
+     */
+    public Trie<T> findByPrefix(String prefix) {
+        return new Trie<>(rootNode.findByPrefix(prefix.toCharArray()));
     }
 
     /**

@@ -25,8 +25,10 @@ public class Main {
 
         // insert when already present
         System.out.println(t.insert("cane","_cane2_")); // _cane_
-
         System.out.println(t + "\tSize: " + t.size());
+
+        // Find by prefix
+        System.out.println(t.findByPrefix("ca"));
 
     }
 }
