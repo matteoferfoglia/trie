@@ -24,7 +24,11 @@ public class Trie<T> {
      *          if no results are available
      */
     public Trie<T> findByPrefix(String prefix) {
-        return new Trie<>(rootNode.findByPrefix(prefix.toCharArray()));
+        try {
+            return new Trie<>(rootNode.findByPrefix(prefix.toCharArray()));
+        } catch (NullPointerException ne) {
+            return new Trie<>();
+        }
     }
 
     /**

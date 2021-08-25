@@ -45,7 +45,7 @@ public class TrieNode<T> {
      * @throws NullPointerException If the desired node is not found.
      */
     public TrieNode<T> findByPrefix(char[] word) throws NullPointerException {
-        if(word.length==0 || word.length==1 && word[0]==this.key) {
+        if(word.length==0) {
             return this;
         } else {
             char[] subArray = new char[word.length-1];
@@ -62,17 +62,25 @@ public class TrieNode<T> {
      * @return the previously contained data, if it was already associated to the given word, null otherwise.
      */
     public T insert(char[] word, T data) {
-        TrieNode<T> parent = this;
+
+        // Find the parent of the new node to insert
+        TrieNode<T> parent = this,
+                    oldParent = this;
         int i = 0;
-        for(; i<word.length-1; i++) {
+        for(; i<word.length; i++) {
             try {
                 parent = parent.findByPrefix(Arrays.copyOfRange(word, i, i + 1));
+                if(parent==oldParent) {
+                    break;
+                } else {
+                    oldParent = parent;
+                }
             } catch (NullPointerException ne) {
                 // node not found
                 break;
             }
         }
-        if(word.length==0) {
+        if(i==word.length) {
             // the word was already present
             T oldData = parent.get();   // the old data will be returned
             parent.data = Optional.ofNullable(data);
