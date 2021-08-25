@@ -136,14 +136,13 @@ public class Main {
     _cane_
     [_albero_, _alberone_, _22p_, _22n_, _cavallo_, _cavia_, _cavolo_, _cani_, _cane2_]	Size: 9
     [_cavallo_, _cavia_, _cavolo_, _cani_, _cane2_]
-    INSERTION in HashTable: 499113.8 us, 2000000 elements, 2000000 distinct values
-    INSERTION in Trie: 3229138.9 us, 2000000 elements, 2000000 distinct values
-    SEARCH in HashTable: 179547.6 us, 2000000 elements with duplicates, 2000000 distinct values
-    SEARCH in Trie: 2065444.3 us, 2000000 elements with duplicates, 2000000 distinct values
-    SEARCH in HashTable by prefix: 373358.2 us, [abc5892wOg=abc5892wOg_, abc6R7Jatf=abc6R7Jatf_, abcL3tcG66=abcL3tcG66_, abcOAttnrD=abcOAttnrD_, abcOQM2WdG=abcOQM2WdG_, abccU5MmFe=abccU5MmFe_, abcgN5wFvg=abcgN5wFvg_, abchAaKAAF=abchAaKAAF_, abclGGxkKB=abclGGxkKB_]
+    INSERTION in HashTable: 428622.5 us, 2000000 elements, 2000000 distinct values
+    INSERTION in Trie: 3343356.1 us, 2000000 elements, 2000000 distinct values
+    SEARCH in HashTable: 228501.3 us, 2000000 elements with duplicates, 2000000 distinct values
+    SEARCH in Trie: 2136665.6 us, 2000000 elements with duplicates, 2000000 distinct values
+    SEARCH in HashTable by prefix: 271522.9 us, [abc5892wOg=abc5892wOg_, abc6R7Jatf=abc6R7Jatf_, abcL3tcG66=abcL3tcG66_, abcOAttnrD=abcOAttnrD_, abcOQM2WdG=abcOQM2WdG_, abccU5MmFe=abccU5MmFe_, abcgN5wFvg=abcgN5wFvg_, abchAaKAAF=abchAaKAAF_, abclGGxkKB=abclGGxkKB_]
         9 elements
-    SEARCH in Trie by prefix: 3.0 us, [abcL3tcG66_, abc6R7Jatf_, abclGGxkKB_, abc5892wOg_, abchAaKAAF_, abcgN5wFvg_, abcOAttnrD_, abcOQM2WdG_, abccU5MmFe_]
+    SEARCH in Trie by prefix: 3.7 us, [abcL3tcG66_, abc6R7Jatf_, abclGGxkKB_, abc5892wOg_, abchAaKAAF_, abcgN5wFvg_, abcOAttnrD_, abcOQM2WdG_, abccU5MmFe_]
         9 elements
-
 
  */
